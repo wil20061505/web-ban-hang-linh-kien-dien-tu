@@ -1,4 +1,37 @@
 /* --- Thiết lập cơ bản --- */
+:root {
+    /* Màu chủ đạo */
+    --primary: #e53935;        /* Đỏ nút, tiêu đề sản phẩm */
+    --primary-dark: #c62828;
+
+    /* Màu nhấn */
+    --accent: #17b978;         /* Xanh lá thanh trên cùng */
+    --accent-dark: #0f8a58;
+
+    /* Màu nền */
+    --bg-light: #f5f5f5;
+    --bg-white: #ffffff;
+
+    /* Màu chữ */
+    --text-dark: #222222;
+    --text-gray: #666666;
+    --text-light: #ffffff;
+
+    /* Màu viền */
+    --border: #dddddd;
+    --border-dark: #cccccc;
+
+    /* Màu menu */
+    --menu-bg: #1f1f1f;
+    --menu-hover: #e53935;
+
+    /* Màu footer */
+    --footer-bg: #000000;
+    --footer-text: #ffffff;
+
+    /* Màu khuyến mãi */
+    --sale: #ffcc00;
+}
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { background-color: #ffffff; padding: 20px; }
 
