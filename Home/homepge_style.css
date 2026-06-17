@@ -13,7 +13,7 @@ body { background-color: #ffffff; padding: 20px; }
     /* Thiết lập Grid cho toàn bộ trang */
     display: grid;
     grid-template-columns: 180px 1fr; /* Cột trái 180px, cột phải chiếm phần còn lại */
-    grid-template-rows: 20px auto auto auto auto 500px;
+    grid-template-rows: 0px auto auto auto auto 500px;
     
     /* VẼ BỐ CỤC: Nhìn vào đây là thấy ngay giao diện! */
     grid-template-areas: 
@@ -27,7 +27,7 @@ body { background-color: #ffffff; padding: 20px; }
 }
 
 /* Định danh các vùng (Areas) để cắm vào bản đồ trên */
-.wel_tile      { grid-area: wel ;}
+
 .header        { grid-area: header; }
 .hero-grid     { grid-area: hero; }
 .sidebar       { grid-area: sidebar; }
@@ -38,11 +38,7 @@ body { background-color: #ffffff; padding: 20px; }
 /* =========================================
    1. HEADER
    ========================================= */
-.header {
-    background-color: #2b3d5b;
-    border-bottom: 2px solid #000;
-    padding: 10px;
-}
+
 .top-bar {
     display: grid;
     grid-template-columns: 80px auto 100px;

@@ -1,0 +1,314 @@
+/* ==========================================================================
+   1. RESET CSS & KHUNG GRID TỔNG THỂ
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.main-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    row-gap: 0px;
+}
+
+/* ==========================================================================
+   2. VÙNG 1: TOP BAR
+   ========================================================================== */
+.hd-top-bar-grid {
+    display: grid;
+    grid-template-columns: 1fr auto; 
+    align-items: center;
+    background-color: #1a1a1a;      
+    color: #cccccc;
+    font-size: 13px;
+    padding: 10px 40px;
+    border-bottom: 1px solid #333;
+}
+
+.hd-top-bar-right a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.hd-top-bar-right a:hover {
+    color: #ffffff;
+}
+
+.hd-top-bar-right i {
+    margin-right: 6px;
+}
+
+/* ==========================================================================
+   3. VÙNG 2: MAIN HEADER
+   ========================================================================== */
+.hd-main-header-grid {
+    display: grid;
+    grid-template-columns: 250px 1fr auto; 
+    gap: 40px;
+    align-items: center;
+    background-color: #000000;     
+    padding: 25px 40px;
+}
+
+.hd-logo-box h2 {
+    color: #ffffff;
+    font-size: 26px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.hd-logo-box i {
+    font-size: 22px;
+    margin-right: 5px;
+}
+
+.hd-search-box {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    height: 40px;
+}
+
+.hd-search-input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.hd-search-input-wrapper .hd-search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666666;
+}
+
+.hd-search-input-wrapper input {
+    width: 100%;
+    height: 100%;
+    padding-left: 42px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    border-radius: 2px 0 0 2px;
+}
+
+.hd-btn-search {
+    background-color: #f0323c;     
+    color: #ffffff;
+    border: none;
+    padding: 0 25px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 0 2px 2px 0;
+    transition: background-color 0.2s ease;
+}
+
+.hd-btn-search:hover {
+    background-color: #d62831;
+}
+
+.hd-auth-avatar-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hd-avatar-circle {
+    width: 36px;
+    height: 36px;
+    background-color: #222222;          
+    border: 1px solid #444444;
+    border-radius: 50%;                 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hd-avatar-circle i {
+    color: #ffffff;
+    font-size: 15px;                    
+}
+
+.hd-auth-links {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.hd-link-auth {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.hd-link-auth:hover {
+    color: #f0323c;
+}
+
+/* ==========================================================================
+   4. VÙNG 3: NAVIGATION BAR & DROPDOWN MENU
+   ========================================================================== */
+.hd-nav-bar-grid {
+    display: grid;
+    grid-template-columns: 1fr;    
+    background-color: #222222;     
+    padding-left: 40px;
+    border-bottom: 1px solid #333;
+}
+
+.hd-nav-menu {
+    display: flex;                 
+    list-style: none;
+}
+
+.hd-nav-menu > li {
+    position: relative; /* Làm gốc định vị cho menu con thả xuống */
+    border-right: 1px solid #333; 
+}
+
+.hd-nav-menu li a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 16px 22px;
+    color: #ffffff;                
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.hd-nav-menu > li > a:hover {
+    color: #f0323c;                
+}
+
+.hd-nav-menu li i {
+    font-size: 11px;
+    margin-left: 6px;
+}
+
+/* THIẾT LẬP KHỐI MENU CON (ẨN MẶC ĐỊNH) */
+.hd-dropdown-menu {
+    position: absolute;
+    top: 100%; /* Xuất hiện ngay sát mép dưới của thanh menu */
+    left: 0;
+    width: 220px;
+    background-color: #222222;
+    list-style: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border-left: 3px solid #f0323c; /* Tạo điểm nhấn vạch đỏ lề trái menu con */
+    
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px); /* Tạo hiệu ứng trượt nhẹ từ dưới lên */
+    transition: all 0.25s ease;
+    z-index: 999;
+}
+
+.hd-dropdown-menu li {
+    border-bottom: 1px solid #333;
+}
+
+.hd-dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.hd-dropdown-menu li a {
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: normal;
+    color: #cccccc;
+    display: flex;
+    gap: 10px; /* Khoảng cách giữa icon và chữ trong menu con */
+}
+
+/* Hiệu ứng di chuột vào từng mục của menu con */
+.hd-dropdown-menu li a:hover {
+    background-color: #1a1a1a;
+    color: #f0323c;
+    padding-left: 25px; /* Đẩy nhẹ chữ qua phải khi hover */
+}
+
+/* KHI DI CHUỘT VÀO SẢN PHẨM -> HIỆN MENU CON */
+.hd-dropdown:hover .hd-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   5. VÙNG 4: FEATURES BAR
+   ========================================================================== */
+.hd-features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #f9f9f9;     
+    padding: 16px 20px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.hd-feature-item {
+    color: #444444;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hd-feature-item i {
+    color: #111111;
+    font-size: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* ==========================================================================
+   6. TIỆN ÍCH: NÚT NỔI HÌNH TRÒN NHỎ GỌN
+   ========================================================================== */
+.hd-floating-cart-round {
+    position: fixed;
+    bottom: 30px;                  
+    right: 30px;                   
+    z-index: 9999;                 
+    background-color: #f0323c;     
+    color: #ffffff;
+    width: 55px;                   
+    height: 55px;                  
+    border-radius: 50%;            
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hd-floating-cart-round:hover {
+    background-color: #d62831;
+    transform: scale(1.08);        
+}
+
+.hd-floating-cart-round i {
+    font-size: 20px;               
+}
+
+.hd-floating-badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background-color: #ffffff;
+    color: #f0323c;
+    font-size: 10px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #f0323c;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}

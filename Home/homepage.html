@@ -4,26 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wireframe with Grid Areas</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="homepge_style.css">
+    <link rel="stylesheet" href="header_style.css">
 </head>
 <body>
 
     <!-- KHUNG CHÍNH ÁP DỤNG GRID AREA -->
     <div class="wrapper">
-         <div class="wel_tile">
-                <h5> text here</h5>
-            </div>
         <!-- HEADER -->
         <header class="header">
            
-            <div class="top-bar">
-                <div class="box logo-box">
-                    <img src="/web-ban-hang-linh-kien-dien-tu/assets/logo/chuot.png">
-                </div>
-                <div class="box search-box"></div>
-                <div class="box action-box"></div>
+             <div class="main-layout-grid">
+
+                <header class="hd-vung-header">
+                    
+                    <div class="hd-top-bar-grid">
+                        <div class="hd-top-bar-left">
+                            Chào mừng bạn đến với Công nghệ số Accent !
+                        </div>
+                        <div class="hd-top-bar-right">
+                            <a href="#"><i class="fa-solid fa-cart-shopping"></i> Thanh toán</a>
+                        </div>
+                    </div>
+
+                    <div class="hd-main-header-grid">
+                        <div class="hd-logo-box">
+                            <h2><i class="fa-solid fa-mobile-screen-button"></i> ACCENT</h2>
+                        </div>
+                        
+                        <div class="hd-search-box">
+                            <div class="hd-search-input-wrapper">
+                                <i class="fa-solid fa-magnifying-glass hd-search-icon"></i>
+                                <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                            </div>
+                            <button type="button" class="hd-btn-search">TÌM KIẾM</button>
+                        </div>
+
+                        <div class="hd-auth-avatar-box">
+                            <div class="hd-avatar-circle">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div class="hd-auth-links">
+                                <a href="#" class="hd-link-auth">Đăng nhập</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <nav class="hd-nav-bar-grid">
+                        <ul class="hd-nav-menu">
+                            <li><a href="#">TRANG CHỦ</a></li>
+                            <li><a href="#">GIỚI THIỆU</a></li>
+                            
+                            <li class="hd-dropdown">
+                                <a href="#">SẢN PHẨM <i class="fa-solid fa-caret-down"></i></a>
+                                <ul class="hd-dropdown-menu">
+                                    <li><a href="#"><i class="fa-solid fa-headphones"></i> Tai nghe</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-keyboard"></i> Bàn phím</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-briefcase"></i> Túi đựng laptop</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-mouse"></i> Chuột máy tính</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li><a href="#">THÔNG BÁO</a></li>
+                            <li><a href="#">LIÊN HỆ</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="hd-features-grid">
+                        <div class="hd-feature-item">
+                            <i class="fa-solid fa-truck"></i> MIỄN PHÍ VẬN CHUYỂN
+                        </div>
+                        <div class="hd-feature-item">
+                            <i class="fa-solid fa-comments"></i> HỖ TRỢ 24/7
+                        </div>
+                        <div class="hd-feature-item">
+                            <i class="fa-solid fa-money-bill-1"></i> HOÀN TIỀN TRONG 15 NGÀY
+                        </div>
+                        <div class="hd-feature-item">
+                            <i class="fa-solid fa-star"></i> GIẢM GIÁ THEO ĐƠN HÀNG
+                        </div>
+                    </div>
+
+                </header>
+
             </div>
-            <div class="nav-bar"></div>
+
+            <div class="hd-floating-cart-round">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="hd-floating-badge">0</span>
+            </div>
+
+        
         </header>
 
         <!-- HERO SECTION (Cũng áp dụng Grid Area) -->
@@ -62,7 +134,7 @@
         <footer class="footer"></footer>
     </div>
 
-
+    <script src="script.js"></script>
     
 
 </body>
