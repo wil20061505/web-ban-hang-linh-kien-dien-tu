@@ -158,6 +158,10 @@
     background-color: #222222;     
     padding-left: 40px;
     border-bottom: 1px solid #333;
+    position: -webkit-sticky; /* Hỗ trợ trình duyệt Safari */
+    position: sticky;
+    top: 0;
+    z-index: 99999;
 }
 
 .hd-nav-menu {
