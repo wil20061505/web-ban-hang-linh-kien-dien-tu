@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập tài khoản - HIGHTGEAR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="homepge_style.css">
+    <link rel="stylesheet" href="header_style.css">
+    <link rel="stylesheet" href="login_style.css">
+</head>
+
+<body>
+
+    <div class="wrapper login-wrapper">
+        
+        <header class="header">
+            <div class="main-layout-grid">
+                <header class="hd-vung-header">
+                    <div class="hd-top-bar-grid">
+                        <div class="hd-top-bar-left">
+                            Chào mừng bạn đến với Công nghệ số HIGHTGEAR !
+                        </div>
+                        <div class="hd-top-bar-right">
+                            <a href="#">
+                                <img src="../assets/icon/shopping/shopping-cart.png" alt="Thanh toán" class="hd-top-icon">
+                                Thanh toán
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hd-main-header-grid">
+                        <div class="hd-logo-box">
+                            <h2>
+                               <img src="../assets/logo/chuot.png" alt="Logo" class="hd-logo-img"> HIGHTGEAR
+                            </h2>
+                        </div>
+                        
+                        <div class="hd-search-box">
+                            <div class="hd-search-input-wrapper">
+                               <img src="../assets/icon/search/search.png" alt="Tìm kiếm" class="hd-search-icon">
+                                <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                            </div>
+                            <button type="button" class="hd-btn-search">TÌM KIẾM</button>
+                        </div>
+
+                        <div class="hd-auth-avatar-box">
+                            <div class="hd-avatar-circle">
+                                <img src="../assets/icon/guest/profile.png" alt="Avatar" class="hd-user-avatar">
+                            </div>
+                            <div class="hd-auth-links">
+                                <a href="login.html" class="hd-link-auth">Đăng nhập</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <nav class="hd-nav-bar-grid">
+                        <ul class="hd-nav-menu">
+                            <li><a href="homepage.html">TRANG CHỦ</a></li>
+                            <li><a href="#">GIỚI THIỆU</a></li>
+                            <li class="hd-dropdown">
+                                <a href="#">SẢN PHẨM <i class="fa-solid fa-caret-down"></i></a>
+                                <ul class="hd-dropdown-menu">
+                                    <li><a href="#"><i class="fa-solid fa-headphones"></i> Tai nghe</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-keyboard"></i> Bàn phím</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-briefcase"></i> Túi đựng laptop</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-mouse"></i> Chuột máy tính</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">THÔNG BÁO</a></li>
+                            <li><a href="#">LIÊN HỆ</a></li>
+                        </ul>
+                    </nav>
+                    
+                    <div class="hd-features-grid">
+                        <div class="hd-feature-item">
+                            <img src="../assets/icon/delivery/fast-delivery.png" alt="Vận chuyển" class="hd-feat-img">
+                            MIỄN PHÍ VẬN CHUYỂN
+                        </div>
+                        <div class="hd-feature-item">
+                            <img src="../assets/icon/advise/center.png" alt="Hỗ trợ" class="hd-feat-img">
+                            HỖ TRỢ 24/7
+                        </div>
+                        <div class="hd-feature-item">
+                            <img src="../assets/icon/refund/money-back.png" alt="Hoàn tiền" class="hd-feat-img">
+                            HOÀN TIỀN TRONG 15 NGÀY
+                        </div>
+                        <div class="hd-feature-item">
+                            <i class="fa-solid fa-ticket-simple"></i>
+                            GIẢM GIÁ THEO ĐƠN HÀNG
+                        </div>
+                    </div>
+                </header>
+            </div>
+
+            <div class="hd-floating-cart-round">
+                <img src="../assets/icon/shopping/bag.png" alt="Giỏ hàng" class="hd-cart-img">
+                <span class="hd-floating-badge">0</span>
+            </div>
+        </header>
+        <main class="login-main-area">
+            
+            <div class="breadcrumb">
+                <a href="homepage.html">Trang chủ</a> 
+                <span class="separator"><i class="fa-solid fa-angle-right"></i></span> 
+                <strong>Đăng nhập tài khoản</strong>
+            </div>
+
+            <div class="login-container">
+                <div class="login-col-left">
+                    <h1 class="login-heading">ĐĂNG NHẬP TÀI KHOẢN</h1>
+                    <p class="login-desc">Nếu bạn đã có tài khoản, hãy đăng nhập để tích lũy điểm thành viên và nhận được ưu đãi tốt hơn!</p>
+                    
+                    <form action="#" class="login-form">
+                        <div class="form-group">
+                            <label>Email <span class="required">*</span></label>
+                            <input type="email" placeholder="Nhập địa chỉ Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Mật khẩu <span class="required">*</span></label>
+                            <input type="password" placeholder="Nhập Mật khẩu" required>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">ĐĂNG NHẬP</button>
+                            <a href="#" class="forgot-pass">Quên mật khẩu?</a>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="login-col-right">
+                    <h1 class="login-heading">KHÁCH HÀNG MỚI</h1>
+                    <p class="login-desc">Nếu bạn chưa có tài khoản trên HIGHTGEAR, hãy sử dụng tùy chọn này để truy cập biểu mẫu đăng ký.</p>
+                    <p class="login-desc">Bằng cách cung cấp thông tin chi tiết, quá trình mua hàng của bạn sẽ là một trải nghiệm thú vị và nhanh chóng hơn, theo dõi trạng thái đơn hàng dễ dàng hơn!</p>
+                    <a href="#" class="btn-register">ĐĂNG KÝ NGAY</a>
+                </div>
+            </div>
+
+        </main>
+        <footer class="footer"></footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
