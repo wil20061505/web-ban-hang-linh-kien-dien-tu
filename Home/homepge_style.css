@@ -809,7 +809,7 @@ body {
 /* Dạng khối sản phẩm mới */
 .product-new {
     display: flex;
-    justify-content: center;
+    justify-content: baseline;
     align-items: center;
     gap: 4px;
 }
