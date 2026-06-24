@@ -1,1 +1,1067 @@
+/* =========================================
+   1. THIẾT LẬP CƠ BẢN & BIẾN (VARIABLES)
+   ========================================= */
+:root {
+    /* Màu giao diện Wireframe */
+    --wf-black: #000000;
+    --wf-white: #ffffff;
+    --wf-gray-blue: #7293b6;
+    --wf-yellow: #fff200;
+    --wf-light-blue: #7fd4ee;
+    --wf-red: #ed1c24;
+    --wf-dark-red: #8b0000;
+    --wf-green: #22b14c;
+    --wf-light-gray: #cccccc;
 
+    /* Màu cũ giữ lại */
+    --primary: #e53935;
+    --primary-dark: #c62828;
+    --accent: #17b978;
+    --accent-dark: #0f8a58;
+    --bg-light: #f5f5f5;
+    --text-dark: #222222;
+    --text-gray: #666666;
+
+    /* Typography & Buttons */
+    --size-sb-title: 50px;
+    --color-button-act: var(--wf-white);
+    --color-button-hover: #535050;
+    --color-button-buy: #857c7c;
+
+    /* Viền dùng chung */
+    --border-main: 4px solid #5654544c;
+
+    /* Bổ sung: các biến phục vụ Header (.hd-*) và Footer (.footer-*) */
+    --bg-white: #ffffff;
+    --text-light: #ffffff;
+    --border: #dddddd;
+    --border-dark: #cccccc;
+    --menu-bg: #1f1f1f;
+    --menu-hover: #e53935;
+    --footer-bg: #ffffff;
+    --footer-text: #000000;
+    --sale: #ffcc00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    /* Bổ sung: đồng bộ font cho toàn bộ trang, gồm cả khu vực header mới */
+}
+
+body {
+    background-color: var(--wf-white);
+}
+
+/* =========================================
+   2. BỐ CỤC TỔNG THỂ (GRID AREAS)
+   ========================================= */
+.wrapper {
+    
+    margin: 0;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: auto auto auto auto 120px;
+    grid-template-areas:
+        "header header"
+        "hero   hero"
+        "sidebar content"
+        "banner banner"
+        "foot   foot";
+
+}
+
+
+
+.header {
+    grid-area: header;
+    background-color: var(--bg-white);
+}
+
+.hero-grid {
+    grid-area: hero;
+    margin-bottom: 50px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    padding: 15px;
+    margin-left: 50px;
+}
+
+.content-area {
+    grid-area: content;
+    margin-right: 50px;
+    padding: 15px 0 0 50px;
+    /* Giảm padding bottom xuống 0 để khít với banner */
+}
+
+.bottom-banner {
+    grid-area: banner;
+    height: fit-content;
+
+    /* SỬA TẠI ĐÂY: Bỏ margin-top để loại bỏ khoảng trắng phía trên banner */
+}
+
+.bottom-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* QUAN TRỌNG: Giúp ảnh tự cắt cúp vừa khít khung mà KHÔNG bị méo */
+    display: block;
+    /* Xóa khoảng trắng thừa mờ nhạt dưới đáy ảnh */
+    border-radius: 4px;
+    /* (Tùy chọn) Bo góc một chút cho mềm mại */
+}
+
+.footer {
+    grid-area: foot;
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    border-top: var(--border-main);
+    /* Cập nhật: dùng biến --footer-bg / --footer-text để khớp với phần Footer chi tiết bổ sung ở mục 9 */
+}
+
+/* =========================================
+   3. KHU VỰC HEADER
+   ========================================= */
+.top-bar {
+    display: grid;
+    grid-template-columns: 100px 1fr 80px;
+    height: 40px;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.top-bar .logo-box {
+    background-color: var(--wf-yellow);
+    border: var(--border-main);
+}
+
+.top-bar .search-box {
+    background-color: var(--wf-light-blue);
+    border: 3px solid var(--wf-red);
+}
+
+.top-bar .action-box {
+    background-color: var(--wf-light-blue);
+    border: 3px solid var(--wf-dark-red);
+}
+
+.nav-bar {
+    background-color: var(--wf-light-blue);
+    height: 20px;
+    border: var(--border-main);
+}
+
+/* ---- Bổ sung: Header chi tiết (.hd-*) lấy từ bản gộp,
+       dùng cho phiên bản header thật thay cho khối wireframe phía trên ---- */
+.main-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    row-gap: 0px;
+}
+
+.hd-top-bar-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    background-color: #1a1a1a;
+    color: #cccccc;
+    font-size: 13px;
+    padding: 10px 40px;
+    border-bottom: 1px solid #333;
+}
+
+.hd-top-bar-right a {
+    display: inline-flex;
+    align-items: center;
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.hd-top-bar-right a:hover {
+    color: #ffffff;
+}
+
+.hd-top-bar-right i {
+    margin-right: 6px;
+}
+
+.hd-top-bar-right a img {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.hd-main-header-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr auto;
+    gap: 30px;
+    align-items: center;
+    background-color: #000000;
+    padding: 25px 40px;
+}
+
+.hd-logo-box h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    color: #ffffff;
+    font-size: 26px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.hd-logo-box img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    flex-shrink: 0;
+}
+
+.hd-logo-box i {
+    font-size: 22px;
+    margin-right: 5px;
+}
+
+.hd-search-box {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    height: 40px;
+}
+
+.hd-search-input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.hd-search-input-wrapper .hd-search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.hd-search-input-wrapper input {
+    width: 100%;
+    height: 100%;
+    padding-left: 42px;
+    padding-right: 15px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    border-radius: 2px 0 0 2px;
+}
+
+.hd-btn-search {
+    background-color: #f0323c;
+    color: #ffffff;
+    border: none;
+    padding: 0 25px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 0 2px 2px 0;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+}
+
+.hd-btn-search:hover {
+    background-color: #d62831;
+}
+
+.hd-auth-avatar-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hd-avatar-circle {
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hd-user-avatar {
+    width: 26px;
+    height: 26px;
+    filter: invert(0);
+}
+
+.hd-avatar-circle i {
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.hd-auth-links {
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.hd-link-auth {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.hd-link-auth:hover {
+    color: #f0323c;
+}
+
+.hd-nav-bar-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #222222;
+    padding-left: 40px;
+    border-bottom: 1px solid #333;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+}
+
+.hd-nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.hd-nav-menu > li {
+    position: relative;
+    border-right: 1px solid #333;
+}
+
+.hd-nav-menu li a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 16px 22px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.hd-nav-menu > li > a:hover {
+    color: #f0323c;
+}
+
+.hd-nav-menu li i {
+    font-size: 11px;
+    margin-left: 6px;
+}
+
+.hd-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 220px;
+    background-color: #222222;
+    list-style: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-left: 3px solid #f0323c;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
+    z-index: 999;
+}
+
+.hd-dropdown-menu li {
+    border-bottom: 1px solid #333;
+}
+
+.hd-dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.hd-dropdown-menu li a {
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: normal;
+    color: #cccccc;
+    display: flex;
+    gap: 10px;
+}
+
+.hd-dropdown-menu li a:hover {
+    background-color: #1a1a1a;
+    color: #f0323c;
+    padding-left: 25px;
+}
+
+.hd-dropdown:hover .hd-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.hd-feature-item img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.hd-feature-item i {
+    color: #111111;
+    font-size: 16px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.hd-features-grid {
+    display: grid;
+    margin-top: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.hd-feature-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.hd-floating-cart-round {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    background-color: #f0323c;
+    color: #ffffff;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hd-floating-cart-round:hover {
+    background-color: #d62831;
+    transform: scale(1.08);
+}
+
+.hd-floating-cart-round i {
+    font-size: 20px;
+}
+
+.hd-floating-cart-round img.hd-cart-img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.hd-floating-badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background-color: #ffffff;
+    color: #f0323c;
+    font-size: 10px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #f0323c;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================
+   4. KHU VỰC HERO SECTION
+   ========================================= */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1px 2fr 1px 1fr;
+    /* Nên set một chiều cao cố định hoặc tối thiểu cho Grid để ảnh có không gian hiển thị */
+    grid-template-rows: 200px 200px;
+    /* Tổng chiều cao là 400px, bạn có thể chỉnh tùy ý */
+    gap: 5px;
+    /* Thêm chút khoảng cách giữa các khối cho đẹp (tùy chọn) */
+    padding: 5px;
+    grid-template-areas:
+        "back h-main next h-sub1"
+        "back h-main next h-sub2";
+}
+
+.back-button {
+    grid-area: back;
+    background-color: var(--accent);
+    /* Căn giữa mũi tên bên trong nút */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    z-index: 999;
+}
+
+.next-button {
+    grid-area: next;
+    background-color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    z-index: 999;
+}
+
+.hero-main {
+    grid-area: h-main;
+}
+
+.hero-sub1 {
+    grid-area: h-sub1;
+}
+
+.hero-sub2 {
+    grid-area: h-sub2;
+}
+
+/* Tối ưu thẻ <a> để nó lấp đầy ô Grid */
+.hero-main a,
+.hero-sub1 a,
+.hero-sub2 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Tối ưu hình ảnh hiển thị */
+.hero-main a img,
+.hero-sub1 a img,
+.hero-sub2 a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* QUAN TRỌNG: Giúp ảnh tự cắt cúp vừa khít khung mà KHÔNG bị méo */
+    display: block;
+    /* Xóa khoảng trắng thừa mờ nhạt dưới đáy ảnh */
+    border-radius: 4px;
+    /* (Tùy chọn) Bo góc một chút cho mềm mại */
+}
+
+/* =========================================
+   5. CẤU TRÚC BLOCK TIÊU ĐỀ (SIDEBAR & CONTENT)
+   ========================================= */
+.sidebar-section-1,
+.sidebar-section-2,
+.content-section-1,
+.content-section-2 {
+    display: grid;
+    grid-template-rows: var(--size-sb-title) auto;
+    gap: 0;
+}
+
+/* Thiết lập riêng cho Sidebar Section */
+.sidebar-section-1,
+.sidebar-section-2 {
+    grid-template-columns: 80% 20%;
+    margin-bottom: 15px;
+}
+
+.sidebar-section-1 {
+    grid-template-areas: "stitle1 b1" "sbox1 sbox1";
+}
+
+.sidebar-section-2 {
+    grid-template-areas: "stitle2 b2" "sbox2 sbox2";
+}
+
+/* Thiết lập riêng cho Content Section */
+.content-section-1,
+.content-section-2 {
+    grid-template-columns: 30% 70%;
+}
+
+.content-section-1 {
+    grid-template-areas: "ctitle1 bu1" "cbox1 cbox1";
+    margin-bottom: 15px;
+}
+
+.content-section-2 {
+    grid-template-areas: "ctitle2 bu2" "cbox2 cbox2";
+    margin-bottom: 0;
+    /* SỬA TẠI ĐÂY: Xóa margin bottom để ép sát xuống banner */
+}
+
+/* Gom nhóm CSS chung cho các ô Tiêu đề */
+.sb-title-1,
+.sb-title-2,
+.content-title-1,
+.content-title-2 {
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.sb-title-1 {
+    grid-area: stitle1;
+}
+
+.sb-title-2 {
+    grid-area: stitle2;
+}
+
+.content-title-1 {
+    grid-area: ctitle1;
+}
+
+.content-title-2 {
+    grid-area: ctitle2;
+}
+
+.sb-title-1 a,
+.sb-title-2 a,
+.content-title-1 a,
+.content-title-2 a {
+    text-decoration: none;
+    color: var(--wf-white);
+    background-color: var(--wf-red);
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+    padding: 20px;
+}
+
+/* =========================================
+   6. CHI TIẾT NỘI DUNG BOX TRONG SIDEBAR & CONTENT
+   ========================================= */
+/* Nội dung Sidebar */
+.sb-content-1 {
+    background-color: #f2efef;
+    grid-area: sbox1;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    padding: 10px;
+    border-radius: 4px;
+    border-top: var(--border-main);
+}
+
+.sb-content-2 {
+    grid-area: sbox2;
+}
+
+.sb-box-new {
+    height: 40px;
+    border: var(--border-main);
+}
+
+.tall-yellow-box {
+    min-height: 380px;
+    background-color: var(--wf-yellow);
+}
+
+/* Nội dung Main Content Boxes */
+.content-box-1 {
+    grid-area: cbox1;
+    border-top: var(--border-main);
+    padding: 15px;
+}
+
+.content-box-2 {
+    grid-area: cbox2;
+    border-top: var(--border-main);
+    padding: 15px 15px 0 15px;
+}
+
+/* Giảm padding bottom */
+
+/* Chia lưới Grid Sản phẩm */
+.grid-4-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 15px;
+}
+
+.grid-2-cols {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(fit-content, auto);
+    gap: 15px;
+    /* SỬA TẠI ĐÂY: Đã điền giá trị hợp lệ thay vì bỏ trống 'gap:;' */
+}
+
+/* Bổ sung: Grid sản phẩm 3 cột (lấy từ bản gộp) */
+.grid-3-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.box-inner {
+    padding: 25px;
+    margin-top: 20px;
+}
+
+/* =========================================
+   7. NÚT ĐIỀU HƯỚNG & XEM THÊM (BUTTONS)
+   ========================================= */
+.button_more,
+.button_more_1,
+.button_more_2,
+.button_more_3 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 3px;
+}
+
+.button_more {
+    grid-area: b1;
+}
+
+.button_more_1 {
+    grid-area: b2;
+}
+
+.button_more_2 {
+    grid-area: bu1;
+}
+
+.button_more_3 {
+    grid-area: bu2;
+}
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.button a {
+    text-decoration: none;
+    background-color: #f6f3f380;
+    color: #ed1c24;
+    font-size: larger;
+    padding: 3px;
+}
+
+/* =========================================
+   8. HIỂN THỊ CHI TIẾT SẢN PHẨM (PRODUCT ITEMS)
+   ========================================= */
+.item {
+    height: fit-content;
+}
+
+/* Dạng 1 - Sản phẩm đứng khối 4 cột */
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product a img {
+    height: 85px;
+    width: 85px;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+/* Dạng 2 - Sản phẩm nằm ngang 2 cột */
+.product-2-col {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.product-2-col a img {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border: 1px #8f8b8b solid;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+/* Dạng khối sản phẩm mới */
+.product-new {
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    gap: 4px;
+}
+
+.product-new a img {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border: 1px #8f8b8b solid;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+/* Typography của Sản phẩm */
+.name-product a {
+    text-decoration: none;
+    color: var(--wf-black);
+
+}
+
+.price {
+    color: var(--wf-red);
+}
+
+/* Nút Mua Hàng & Giỏ hàng */
+.box-button-buy {
+    display: flex;
+    gap: 2px;
+}
+
+.btn-buy,
+.btn-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-button-buy);
+    height: 40px;
+    width: 90px;
+    padding: 2px;
+    margin: 2px;
+    background-color: var(--wf-white);
+    color: var(--text-dark);
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+}
+
+.btn-buy img {
+    width: 30px;
+    height: auto;
+}
+
+.btn-buy:hover,
+.btn-cart:hover {
+    transition: 0.5s;
+    background-color: var(--wf-red);
+    color: var(--wf-white);
+}
+
+/* =========================================
+   9. FOOTER (đầy đủ — bổ sung từ bản gộp)
+   ========================================= */
+.footer {
+    padding: 50px 0 20px 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-bottom: 40px;
+}
+
+.footer-col {
+    flex: 0 0 100%;
+}
+
+.footer-col-brand {
+    flex: 1.5;
+    min-width: 220px;
+}
+
+.footer-logo {
+    font-size: 30px;
+    font-weight: 700;
+    font-style: italic;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin-bottom: 15px;
+    color: var(--footer-text);
+}
+
+.footer-desc {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--footer-text);
+    margin-bottom: 20px;
+}
+
+.footer-payments {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-payment-img {
+    height: 28px;
+    border: 1px solid var(--footer-bg);
+}
+
+.footer-title {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--footer-text);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-link-item {
+    margin-bottom: 12px;
+}
+
+.footer-link-item a {
+    text-decoration: none;
+    color: var(--footer-text);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+.footer-link-item a::before {
+    content: ">";
+    margin-right: 8px;
+    font-size: 14px;
+    color: var(--footer-text);
+    line-height: 1;
+}
+
+.footer-link-item a:hover {
+    color: var(--menu-hover);
+}
+
+.footer-contact-item {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.footer-contact-item img {
+    height: 20px;
+}
+
+.footer-contact-text {
+    font-size: 14px;
+    color: var(--footer-text);
+    line-height: 1.4;
+}
+
+.footer-contact-list-img {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-contact-img {
+    height: 25px;
+    width: auto;
+}
+
+.footer-bottom {
+    padding-top: 20px;
+    border-top: 1px solid var(--wf-black);
+}
+
+.footer-copyright {
+    font-size: 14px;
+    color: var(--footer-text);
+    text-align: center;
+}
+
+.footer-copyright strong {
+    color: var(--footer-text);
+}
+
+.footer-copyright-link {
+    color: var(--footer-text);
+    text-decoration: none;
+}
+
+.footer-copyright-link:hover {
+    color: var(--primary);
+}
+
+/* =========================================
+   10. RESPONSIVE FOOTER (bổ sung từ bản gộp)
+   ========================================= */
+@media (min-width: 768px) {
+    .footer-col {
+        flex: 0 0 calc(50% - 15px);
+    }
+
+    .footer-col-brand {
+        flex: 0 0 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-col {
+        flex: 1;
+    }
+
+    .footer-col-brand {
+        flex: 1.8;
+    }
+
+    .footer-col-contact {
+        flex: 1.5;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-col .footer-links {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        margin-bottom: 0;
+    }
+
+    .footer-col .footer-title {
+        cursor: pointer;
+        margin-bottom: 15px;
+        display: inline-flex;
+        width: auto;
+    }
+
+    .footer-col:has(.footer-title:hover) .footer-links,
+    .footer-col .footer-links:hover {
+        max-height: 300px;
+        opacity: 1;
+        margin-bottom: 25px;
+    }
+}
