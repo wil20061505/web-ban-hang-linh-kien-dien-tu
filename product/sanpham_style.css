@@ -1,0 +1,102 @@
+
+
+/* =========================================
+   12. CSS RIÊNG CHO PHẦN GIỮA (DANH MỤC & LƯỚI SẢN PHẨM)
+   ========================================= */
+.bag-page {
+    grid-column: 1 / -1; 
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px 40px 60px 40px;
+}
+
+/* Thanh breadcrumb định vị đường dẫn */
+.breadcrumb-bar {
+    font-size: 13px;
+    margin-bottom: 20px;
+    color: #777777;
+}
+.breadcrumb-bar a {
+    text-decoration: none;
+    color: #666666;
+}
+.breadcrumb-bar a.active {
+    color: #f0323c;
+}
+.breadcrumb-bar span {
+    font-size: 10px;
+    margin: 0 5px;
+}
+
+/* Container chia làm 2 cột chính */
+.bag-layout-container {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* --- CỘT TRÁI: SIDEBAR MENU --- */
+.sidebar-menu-title {
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 12px 15px;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+.sidebar-menu-list {
+    list-style: none;
+    border: 1px solid #e0e0e0;
+}
+.sidebar-menu-list li {
+    border-bottom: 1px solid #f0f0f0;
+}
+.sidebar-menu-list li:last-child {
+    border-bottom: none;
+}
+.sidebar-menu-list li a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #333333;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+.sidebar-menu-list li a:hover, 
+.sidebar-menu-list li a.active {
+    background-color: #f9f9f9;
+    color: #f0323c;
+    padding-left: 20px;
+}
+
+/* --- CỘT PHẢI: DANH SÁCH SẢN PHẨM --- */
+.bag-products-content {
+    background-color: #ffffff;
+}
+.products-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+.products-header-bar h2 {
+    font-size: 24px;
+    color: #111111;
+    font-weight: bold;
+}
+.sort-box select {
+    padding: 6px 12px;
+    border: 1px solid #cccccc;
+}
+
+/* Lưới sản phẩm 4 cột */
+.products-grid-4-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
