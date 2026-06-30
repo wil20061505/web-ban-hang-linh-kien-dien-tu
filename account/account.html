@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Wireframe with Grid Areas</title>
+        <link rel="stylesheet"
+            href="/web-ban-hang-linh-kien-dien-tu/Home/homepge_style.css" />
+        <link rel="stylesheet"
+            href="/web-ban-hang-linh-kien-dien-tu/Home/account_style.css" />
+    </head>
+    <body>
+        <!-- KHUNG CHÍNH ÁP DỤNG GRID AREA -->
+        <div class="wrapper account-wrapper">
+
+            <!-- HEADER -->
+
+            <header class="header">
+
+                <div class="main-layout-grid">
+
+                    <header class="hd-vung-header">
+
+                        <div class="hd-top-bar-grid">
+                            <div class="hd-top-bar-left">
+                                Chào mừng bạn đến với Công nghệ số HIGHTGEAR !
+                            </div>
+                            <div class="hd-top-bar-right">
+                                <a href="#">
+                                    <img
+                                        src="../assets/icon/shopping/shopping-cart.png"
+                                        alt="Thanh toán" class="hd-top-icon">
+                                    Thanh toán
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="hd-main-header-grid">
+
+                            <div class="hd-logo-box">
+                                <h2>
+                                    <img src="../assets/logo/chuot.png"
+                                        alt="Logo" class="hd-logo-img">
+                                    HIGHGEAR
+                                </h2>
+                            </div>
+
+                            <div class="hd-search-box">
+                                <div class="hd-search-input-wrapper">
+                                    <img src="../assets/icon/search/search.png"
+                                        alt="Tìm kiếm" class="hd-search-icon">
+                                    <input type="text"
+                                        placeholder="Tìm kiếm sản phẩm...">
+                                </div>
+                                <button type="button" class="hd-btn-search">TÌM
+                                    KIẾM</button>
+                            </div>
+
+                            <div class="hd-auth-avatar-box">
+                                <div class="hd-avatar-circle">
+                                    <img src="../assets/icon/guest/profile.png"
+                                        alt="Avatar" class="hd-user-avatar">
+                                </div>
+                                <div class="hd-auth-links">
+                                    <a id="loginBtn" href="#"
+                                        class="hd-link-auth">Đăng
+                                        nhập</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <nav class="hd-nav-bar-grid">
+                            <ul class="hd-nav-menu">
+                                <li><a href="#">TRANG CHỦ</a></li>
+                                <li><a href="#">GIỚI THIỆU</a></li>
+
+                                <li class="hd-dropdown">
+                                    <a
+                                        href="http://127.0.0.1:5501/web-ban-hang-linh-kien-dien-tu/product/chuot.html">SẢN
+                                        PHẨM <i
+                                            class="fa-solid fa-caret-down"></i></a>
+                                    <ul class="hd-dropdown-menu">
+                                        <li><a href="#"><i
+                                                    class="fa-solid fa-headphones"></i>
+                                                Tai nghe</a></li>
+                                        <li><a href="#"><i
+                                                    class="fa-solid fa-keyboard"></i>
+                                                Bàn phím</a></li>
+                                        <li><a href="#"><i
+                                                    class="fa-solid fa-briefcase"></i>
+                                                Túi đựng laptop</a></li>
+                                        <li><a href="#"><i
+                                                    class="fa-solid fa-mouse"></i>
+                                                Chuột máy tính</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">THÔNG BÁO</a></li>
+                                <li><a href="#">LIÊN HỆ</a></li>
+                            </ul>
+                        </nav>
+
+                        <div class="hd-features-grid">
+                            <div class="hd-feature-item">
+                                <img
+                                    src="../assets/icon/delivery/fast-delivery.png"
+                                    alt="Vận chuyển" class="hd-feat-img">
+                                MIỄN PHÍ VẬN CHUYỂN
+                            </div>
+
+                            <div class="hd-feature-item">
+                                <img src="../assets/icon/advise/center.png"
+                                    alt="Hỗ trợ" class="hd-feat-img">
+                                HỖ TRỢ 24/7
+                            </div>
+
+                            <div class="hd-feature-item">
+                                <img src="../assets/icon/refund/money-back.png"
+                                    alt="Hoàn tiền" class="hd-feat-img">
+                                HOÀN TIỀN TRONG 15 NGÀY
+                            </div>
+
+                            <div class="hd-feature-item">
+                                <img src="../assets/icon/sale/sale-tag.png"
+                                    alt="Giảm giá" class="hd-feat-img">
+                                <i class="fa-solid fa-ticket-simple"></i>
+                                GIẢM GIÁ THEO ĐƠN HÀNG
+                            </div>
+                        </div>
+                    </header>
+
+                </div>
+
+                <div class="hd-floating-cart-round">
+                    <img src="../assets/icon/shopping/bag.png" alt="Giỏ hàng"
+                        class="hd-cart-img">
+                    <span class="hd-floating-badge">0</span>
+                </div>
+
+            </header>
+
+            <main class="main-account">
+
+                <div class="account-container">
+
+                    <!-- Cột trái -->
+                    <div class="account-avatar">
+
+                        <img
+                            src="../assets/icon/guest/profile.png"
+                            alt="avatar"
+                            id="avatarPreview">
+
+                        <input
+                            type="file"
+                            id="avatarInput"
+                            accept="image/*"
+                            hidden>
+
+                        <button
+                            class="btn-change-avatar"
+                            onclick="document.getElementById('avatarInput').click()">
+                            Đổi ảnh đại diện
+                        </button>
+
+                    </div>
+
+                    <!-- Cột phải -->
+                    <div class="account-info">
+
+                        <h2>Thông tin tài khoản</h2>
+
+                        <div class="info-group">
+                            <label>Họ và tên</label>
+                            <input
+                                type="text"
+                                id="fullname"
+                                value="Nguyễn Văn A">
+                        </div>
+
+                        <div class="info-group">
+                            <label>Số điện thoại</label>
+                            <input
+                                type="text"
+                                id="phone"
+                                value="0987654321">
+                        </div>
+
+                        <div class="info-group">
+                            <label>Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                value="nguyenvana@gmail.com">
+                        </div>
+
+                        <div class="info-group">
+                            <label>Địa chỉ giao hàng</label>
+
+                            <textarea
+                                id="address"
+                                rows="4">123 Nguyễn Huệ, Quận 1, TP.HCM</textarea>
+                        </div>
+
+                        <div class="button-group">
+
+                            <button class="btn-save">
+                                Lưu thay đổi
+                            </button>
+
+                            <button class="btn-cancel">
+                                Hủy
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </main>
+            <!-- FOOTER -->
+            <footer class="footer">
+                <div class="footer-container">
+                    <div class="footer-top">
+                        <div class="footer-col footer-col-brand">
+                            <h2 class="footer-logo">Nhóm 12</h2>
+                            <p class="footer-desc">
+                                Nhóm 12 đã và đang cố gắng thực hiện bài thực
+                                hành cuối kì một
+                                cách trọn vẹn nhất.
+                            </p>
+                            <div class="footer-payments">
+                                <img
+                                    src="../assets/icon/paypal/paypal.png"
+                                    alt="PayPal"
+                                    class="footer-payment-img" />
+                                <img
+                                    src="../assets/icon/visa/visa.png"
+                                    alt="Visa"
+                                    class="footer-payment-img" />
+                                <img
+                                    src="../assets/icon/vnpay/vnpay.jpg"
+                                    alt="VNPay"
+                                    class="footer-payment-img" />
+                                <img
+                                    src="../assets/icon/mastercard/Mastercard.svg"
+                                    alt="Mastercard"
+                                    class="footer-payment-img" />
+                                <img
+                                    src="../assets/icon/zalopay/zalopay.png"
+                                    alt="Zalopay"
+                                    class="footer-payment-img" />
+                                <img
+                                    src="../assets/icon/apple pay/apple-pay.png"
+                                    alt="ApplePay"
+                                    class="footer-payment-img" />
+                            </div>
+                        </div>
+
+                        <div class="footer-col">
+                            <h3 class="footer-title">Về chúng tôi</h3>
+                            <ul class="footer-links">
+                                <li class="footer-link-item">
+                                    <a href="#">Giới thiệu về công ty</a>
+                                </li>
+                                <li class="footer-link-item">
+                                    <a href="#">Hệ thống cửa hàng</a>
+                                </li>
+                                <li class="footer-link-item"><a href="#">Tuyển
+                                        dụng</a></li>
+                                <li class="footer-link-item">
+                                    <a href="#">Tin tức công nghệ</a>
+                                </li>
+                                <li class="footer-link-item"><a href="#">Góp
+                                        ý</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-col">
+                            <h3 class="footer-title">Hỗ trợ khách hàng</h3>
+                            <ul class="footer-links">
+                                <li class="footer-link-item">
+                                    <a href="#">Chính sách bảo hành</a>
+                                </li>
+                                <li class="footer-link-item">
+                                    <a href="#">Chính sách đổi trả</a>
+                                </li>
+                                <li class="footer-link-item">
+                                    <a href="#">Phương thức thanh toán</a>
+                                </li>
+                                <li class="footer-link-item">
+                                    <a href="#">Chính sách vận chuyển</a>
+                                </li>
+                                <li class="footer-link-item">
+                                    <a href="#">Giải pháp khiếu nại</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-col">
+                            <h3 class="footer-title">Hướng dẫn</h3>
+                            <ul class="footer-links">
+                                <li class="footer-link-item">
+                                    <a href="#">Hướng dẫn mua hàng</a>
+                                </li>
+                                <li class="footer-link-item">
+                                    <a href="#">Hướng dẫn tra cứu đơn hàng</a>
+                                </li>
+                                <li class="footer-link-item">
+                                    <a href="#">Hướng dẫn kích hoạt bảo hành</a>
+                                </li>
+                                <li class="footer-link-item">
+                                    <a href="#">Chính sách bảo mật</a>
+                                </li>
+                                <li class="footer-link-item">
+                                    <a href="#">Câu hỏi thường gặp</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-col footer-col-contact">
+                            <h3 class="footer-title">Liên hệ</h3>
+                            <div class="footer-contact-list">
+                                <ul class="footer-contact-item">
+                                    <li>
+                                        <img
+                                            src="../assets/icon/location/maps-and-flags.png"
+                                            alt="Address" />
+                                        <p class="footer-contact-text">
+                                            Võ Oanh, Quận Bình Thạnh, Thành phố
+                                            Hồ Chí Minh
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <img
+                                            src="../assets/icon/contact/phone.png"
+                                            alt="Phone" />
+                                        <p class="footer-contact-text">1900
+                                            1912</p>
+                                    </li>
+                                </ul>
+                                <div class="footer-contact-list-img">
+                                    <a href="#"><img
+                                            src="../assets/icon/email/email.png"
+                                            alt="Email"
+                                            class="footer-contact-img" /></a>
+                                    <a href="#"><img
+                                            src="../assets/icon/facebook/facebook.png"
+                                            alt="Facebook"
+                                            class="footer-contact-img" /></a>
+                                    <a href="#"><img
+                                            src="../assets/icon/instagram/instagram.png"
+                                            alt="Instagram"
+                                            class="footer-contact-img" /></a>
+                                    <a href="#"><img
+                                            src="../assets/icon/tiktok/tik-tok.png"
+                                            alt="Tiktok"
+                                            class="footer-contact-img" /></a>
+                                    <a href="#"><img
+                                            src="../assets/icon/x/twitter.png"
+                                            alt="Twitter"
+                                            class="footer-contact-img" /></a>
+                                    <a href="#"><img
+                                            src="../assets/icon/youtube/youtube.png"
+                                            alt="Youtube"
+                                            class="footer-contact-img" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p class="footer-copyright">
+                            @ Bản quyền thuộc về <strong>Nhóm 12</strong> |
+                            <a href="#" class="footer-copyright-link">Website
+                                Bán Hàng Linh Kiện Thiết Bị Di Động</a>
+                        </p>
+                    </div>
+                </div>
+            </footer>
+            <div id="overlay">
+                <div class="modal">
+
+                    <div>
+                        <div class="info-edit">
+                            <div class="ext-btn close">
+                                <a>X</a>
+                            </div>
+                            <div class="item">
+                                <img src="../assets/icon/guest/profile.png"
+                                    <span>Tên đăng nhập:</span>
+                            <p>nguyenvana</p>
+                        </div>
+
+                        <div class="item">
+                            <p>nguyenvana@gmail.com</p>
+                        </div>
+
+                        <div class="item">
+                            <span>Số điện thoại</span>
+                            <p>0987654321</p>
+                        </div>
+
+                        <div class="item">
+                            <span>Địa chỉ</span>
+                            <p>123 Nguyễn Huệ, Quận 1, TP.HCM</p>
+                        </div>
+
+                        <div class="item">
+                            <span>Ngày sinh</span>
+                            <p>01/01/2004</p>
+                        </div>
+                    </div>
+                    <div class="edit-btn">
+                        <button>Chỉnh Sử thông tin</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <script
+            src="/web-ban-hang-linh-kien-dien-tu/Home/homepage.js"
+            src="/web-ban-hang-linh-kien-dien-tu/account/account.js"></script>
+    </body>
+</html>
