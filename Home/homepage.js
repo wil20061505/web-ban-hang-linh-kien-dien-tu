@@ -31,6 +31,13 @@ window.addEventListener("scroll", () => {
     }
 
 });
-console.log(loginBtn);
-console.log(closeBtn);
-console.log(overlay);
+const menu =()=> {
+    const navToggleBtn = document.getElementById("hd-mobile-nav-toggle");
+    const navBar = document.querySelector(".hd-nav-bar-grid");
+ 
+       if (navBar && navToggleBtn) {
+        // Chạy hiệu ứng ngay lập tức trong lần bấm đầu tiên
+        navBar.classList.toggle("hd-nav-bar-mobile-open");
+        navToggleBtn.classList.toggle("active");
+    }
+}
