@@ -1,0 +1,182 @@
+/* =========================================
+   1. STYLE CHUNG CHO TRANG ĐĂNG NHẬP
+   ========================================= */
+.wrapper.login-wrapper {
+    display: grid;
+    grid-template-columns: 100% !important; /* Ép thành 1 cột */
+    grid-template-rows: auto auto auto !important; /* Header -> Login -> Footer */
+    grid-template-areas:
+        "header"
+        "login"
+        "foot" !important;
+}
+
+.login-main-area {
+    grid-area: login;
+    background-color: var(--wf-white);
+    padding: 40px 0 60px 0;
+}
+
+.login-inner-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px; /* Khớp với khoảng cách của header */
+}
+
+/* =========================================
+   2. STYLE BREADCRUMB (ĐIỀU HƯỚNG)
+   ========================================= */
+.breadcrumb {
+    font-size: 14px;
+    margin-bottom: 40px;
+    color: var(--text-gray);
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--wf-red);
+}
+
+.breadcrumb .separator {
+    margin: 0 12px;
+    font-size: 11px;
+    color: var(--wf-light-gray);
+}
+
+.breadcrumb strong {
+    color: var(--wf-red);
+    font-weight: bold;
+}
+
+/* =========================================
+   3. STYLE FORM ĐĂNG NHẬP CHUẨN SAPO (2 CỘT)
+   ========================================= */
+.login-grid-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.login-heading {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+/* Đường gạch chân đỏ dưới tiêu đề giống Sapo Accent */
+.login-heading::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--wf-red);
+}
+
+.login-desc {
+    font-size: 14.5px;
+    color: var(--text-gray);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.login-form .form-group {
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.login-form .required {
+    color: var(--wf-red);
+}
+
+.login-form input {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid var(--border-dark);
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+    border-color: var(--wf-red);
+}
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 15px;
+}
+
+/* Đồng bộ nút bấm với mã màu web của bạn */
+.btn-primary, .btn-register {
+    background-color: var(--wf-red);
+    color: var(--wf-white);
+    border: none;
+    padding: 14px 40px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover, .btn-register:hover {
+    background-color: var(--wf-dark-red);
+}
+
+.btn-register {
+    background-color: #222222; /* Màu đen tương phản cho nút đăng ký */
+}
+
+.btn-register:hover {
+    background-color: var(--wf-red);
+}
+
+.forgot-pass {
+    font-size: 14px;
+    color: var(--text-gray);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.forgot-pass:hover {
+    color: var(--wf-red);
+    text-decoration: underline;
+}
+
+/* Responsive: Thu gọn thành 1 cột trên điện thoại / tablet */
+@media (max-width: 992px) {
+    .login-grid-box {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .login-inner-container {
+        padding: 0 20px;
+    }
+}

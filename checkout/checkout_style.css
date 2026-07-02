@@ -1,0 +1,668 @@
+/* =======================================================
+   CSS GIAO DIỆN THANH TOÁN TĨNH 2 CỘT CÂN ĐỐI ĐỀU NHAU
+   ======================================================= */
+.checkout-main-content {
+    grid-column: span 2;
+    background-color: #f7f8f9;
+    padding: 30px 0 60px 0;
+    font-family: Arial, sans-serif;
+}
+
+.checkout-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.checkout-breadcrumb {
+    font-size: 13px;
+    color: #777777;
+    margin-bottom: 25px;
+}
+
+.checkout-breadcrumb a {
+    color: #33a8a6;
+    text-decoration: none;
+}
+
+/* LƯỚI CHIA TỶ LỆ 2 CỘT 65% VÀ 32% */
+.checkout-layout-grid {
+    display: grid;
+    grid-template-columns: 65% 32%;
+    gap: 3%;
+    align-items: flex-start;
+}
+
+.checkout-card {
+    background: #ffffff;
+    border: 1px solid #e2e2e2;
+    border-radius: 6px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #111111;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* KHU VỰC CÁC CẶP Ô INPUT */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 6px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #f0323c;
+    outline: none;
+}
+
+/* HÌNH THỨC VẬN CHUYỂN / THANH TOÁN */
+.sub-section-title {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    color: #555555;
+}
+
+.method-option-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background: #ffffff;
+}
+
+.method-option-box.checked {
+    border-color: #33a8a6;
+    background-color: #f9fdfd;
+}
+
+.method-option-box input[type="radio"] {
+    margin-right: 12px;
+    accent-color: #33a8a6;
+}
+
+.method-text {
+    flex: 1;
+    font-size: 13px;
+    color: #222222;
+}
+
+.method-price {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* LƯỚI NGÂN HÀNG */
+.bank-selection-container {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #fafafa;
+    border: 1px dashed #dddddd;
+    border-radius: 4px;
+}
+
+.bank-help-text {
+    font-size: 12px;
+    margin: 0 0 10px 0;
+    color: #666666;
+}
+
+.bank-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.bank-card-item input[type="radio"] {
+    display: none;
+}
+
+.bank-box-design {
+    border: 1px solid #dddddd;
+    background: #ffffff;
+    padding: 12px 5px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.bank-card-item input[type="radio"]:checked + .bank-box-design {
+    border-color: #f0323c;
+    background-color: #fff5f5;
+    box-shadow: 0 0 5px rgba(240, 50, 60, 0.15);
+}
+
+.bank-box-design.vcb { color: #217346; }
+.bank-box-design.tcb { color: #ea1d25; }
+.bank-box-design.mbb { color: #004191; }
+.bank-box-design.ctg { color: #00a5e3; }
+.bank-box-design.bidv { color: #007357; }
+.bank-box-design.acb { color: #005bae; }
+
+/* CỘT PHẢI TÓM TẮT ĐƠN HÀNG STICKY */
+.sticky-summary-card {
+    background: #ffffff;
+    border: 1px solid #e2e2e2;
+    border-radius: 6px;
+    padding: 24px;
+    position: sticky;
+    top: 90px; /* Thẻ trượt treo cố định đều đặn khi cuộn trang */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.summary-product-scroll {
+    max-height: 180px;
+    overflow-y: auto;
+    margin-bottom: 18px;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.summary-img-block img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+
+.summary-qty-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #33a8a6;
+    color: #ffffff;
+    font-size: 10px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.summary-p-name {
+    font-size: 13px;
+    font-weight: bold;
+    color: #333333;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-/* =======================================================
+   CSS GIAO DIỆN THANH TOÁN TĨNH 2 CỘT CÂN ĐỐI ĐỀU NHAU
+   ======================================================= */
+.checkout-main-content {
+    grid-column: span 2;
+    background-color: #f7f8f9;
+    padding: 30px 0 60px 0;
+    font-family: Arial, sans-serif;
+}
+
+.checkout-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.checkout-breadcrumb {
+    font-size: 13px;
+    color: #777777;
+    margin-bottom: 25px;
+}
+
+.checkout-breadcrumb a {
+    color: #33a8a6;
+    text-decoration: none;
+}
+
+/* LƯỚI CHIA TỶ LỆ 2 CỘT 65% VÀ 32% */
+.checkout-layout-grid {
+    display: grid;
+    grid-template-columns: 65% 32%;
+    gap: 3%;
+    align-items: flex-start;
+}
+
+.checkout-card {
+    background: #ffffff;
+    border: 1px solid #e2e2e2;
+    border-radius: 6px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #111111;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* KHU VỰC CÁC CẶP Ô INPUT */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 6px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #f0323c;
+    outline: none;
+}
+
+/* HÌNH THỨC VẬN CHUYỂN / THANH TOÁN */
+.sub-section-title {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    color: #555555;
+}
+
+.method-option-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background: #ffffff;
+}
+
+.method-option-box.checked {
+    border-color: #33a8a6;
+    background-color: #f9fdfd;
+}
+
+.method-option-box input[type="radio"] {
+    margin-right: 12px;
+    accent-color: #33a8a6;
+}
+
+.method-text {
+    flex: 1;
+    font-size: 13px;
+    color: #222222;
+}
+
+.method-price {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* LƯỚI NGÂN HÀNG */
+.bank-selection-container {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #fafafa;
+    border: 1px dashed #dddddd;
+    border-radius: 4px;
+}
+
+.bank-help-text {
+    font-size: 12px;
+    margin: 0 0 10px 0;
+    color: #666666;
+}
+
+.bank-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.bank-card-item input[type="radio"] {
+    display: none;
+}
+
+.bank-box-design {
+    border: 1px solid #dddddd;
+    background: #ffffff;
+    padding: 12px 5px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.bank-card-item input[type="radio"]:checked + .bank-box-design {
+    border-color: #f0323c;
+    background-color: #fff5f5;
+    box-shadow: 0 0 5px rgba(240, 50, 60, 0.15);
+}
+
+.bank-box-design.vcb { color: #217346; }
+.bank-box-design.tcb { color: #ea1d25; }
+.bank-box-design.mbb { color: #004191; }
+.bank-box-design.ctg { color: #00a5e3; }
+.bank-box-design.bidv { color: #007357; }
+.bank-box-design.acb { color: #005bae; }
+
+/* CỘT PHẢI TÓM TẮT ĐƠN HÀNG STICKY */
+.sticky-summary-card {
+    background: #ffffff;
+    border: 1px solid #e2e2e2;
+    border-radius: 6px;
+    padding: 24px;
+    position: sticky;
+    top: 90px; /* Thẻ trượt treo cố định đều đặn khi cuộn trang */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.summary-product-scroll {
+    max-height: 180px;
+    overflow-y: auto;
+    margin-bottom: 18px;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.summary-img-block img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+
+.summary-qty-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #33a8a6;
+    color: #ffffff;
+    font-size: 10px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.summary-p-name {
+    font-size: 13px;
+    font-weight: bold;
+    color: #333333;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.summary-p-sku {
+    font-size: 11px;
+    color: #888888;
+    margin-top: 2px;
+}
+
+.summary-p-price {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.discount-flex-box {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.discount-flex-box input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.discount-flex-box button {
+    background-color: #33a8a6;
+    color: #ffffff;
+    border: none;
+    padding: 0 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.price-billing-area {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+
+.billing-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #555555;
+    margin-bottom: 10px;
+}
+
+.billing-row.final-grand-row {
+    border-top: 1px dashed #dddddd;
+    padding-top: 12px;
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.grand-total-price {
+    color: #f0323c;
+    font-size: 19px;
+}
+
+.checkout-action-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.return-cart-link {
+    font-size: 13px;
+    color: #33a8a6;
+    text-decoration: none;
+}
+
+.btn-checkout-finish {
+    background-color: #33a8a6;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn-checkout-finish:hover {
+    background-color: #288f8c;
+}
+
+@media (max-width: 991px) {
+    .checkout-layout-grid {
+        grid-template-columns: 1fr;
+    }
+    .sticky-summary-card {
+        position: static;
+    }
+}
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.summary-p-sku {
+    font-size: 11px;
+    color: #888888;
+    margin-top: 2px;
+}
+
+.summary-p-price {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.discount-flex-box {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.discount-flex-box input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.discount-flex-box button {
+    background-color: #33a8a6;
+    color: #ffffff;
+    border: none;
+    padding: 0 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.price-billing-area {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+
+.billing-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #555555;
+    margin-bottom: 10px;
+}
+
+.billing-row.final-grand-row {
+    border-top: 1px dashed #dddddd;
+    padding-top: 12px;
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.grand-total-price {
+    color: #f0323c;
+    font-size: 19px;
+}
+
+.checkout-action-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.return-cart-link {
+    font-size: 13px;
+    color: #33a8a6;
+    text-decoration: none;
+}
+
+.btn-checkout-finish {
+    background-color: #33a8a6;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn-checkout-finish:hover {
+    background-color: #288f8c;
+}
+
+@media (max-width: 991px) {
+    .checkout-layout-grid {
+        grid-template-columns: 1fr;
+    }
+    .sticky-summary-card {
+        position: static;
+    }
+}
